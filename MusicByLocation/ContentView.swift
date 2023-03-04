@@ -9,30 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject private var locationHandler = LocationHandler()
+    @StateObject private var state = StateController()
     
     var body: some View {
         VStack {
-            Text("""
-                 Place name: \(locationHandler.lastKnownPlaceName)
-                 Thoroughfare: \(locationHandler.lastKnownThoroughfare)
-                 Sub-Locality: \(locationHandler.lastKnownSubLocality)
-                 Locality: \(locationHandler.lastKnownLocality)
-                 Postal Code: \(locationHandler.lastKnownPostalCode)
-                 """)
+            Text(state.artistNames)
+            Text(state.lastKnownLocation)
                 .padding()
             
             Spacer()
             
             Button("Find Music", action: {
-                locationHandler.requestLocation()
+                state.findMusic()
             })
             
             Spacer()
             
         }.onAppear(perform: {
-            locationHandler.requestAuthorisation()
-            
+            state.requestAccessToLocationData()
+            state.getArtists()
         })
         
     }

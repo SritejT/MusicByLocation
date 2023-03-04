@@ -8,14 +8,11 @@
 import Foundation
 import CoreLocation
 
-class LocationHandler: NSObject, CLLocationManagerDelegate, ObservableObject {
+class LocationHandler: NSObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
     let geocoder = CLGeocoder()
-    @Published var lastKnownLocality: String = ""
-    @Published var lastKnownThoroughfare: String = ""
-    @Published var lastKnownPlaceName: String = ""
-    @Published var lastKnownPostalCode: String = ""
-    @Published var lastKnownSubLocality: String = ""
+    weak var stateController: StateController?
+
     
     override init() {
         super.init()
@@ -35,15 +32,10 @@ class LocationHandler: NSObject, CLLocationManagerDelegate, ObservableObject {
         if let firstLocation = locations.first {
             geocoder.reverseGeocodeLocation(firstLocation, completionHandler: { (placemarks, error) in
                 if error != nil {
-                    self.lastKnownLocality = "Could not perform lookup of location from coordinate information."
-                    self.lastKnownThoroughfare = "Could not perform lookup of throughfare from coordinate information."
+                    self.stateController?.lastKnownLocation = "Could not perform lookup of location from coordinate information."
                 } else {
                     if let firstPlacemark = placemarks?[0] {
-                        self.lastKnownLocality = firstPlacemark.locality ?? "Couldn't find locality."
-                        self.lastKnownThoroughfare = firstPlacemark.thoroughfare ?? "Couldn't find thoroughfare."
-                        self.lastKnownPlaceName = firstPlacemark.name ?? "Couldn't find place name."
-                        self.lastKnownPostalCode = firstPlacemark.postalCode ?? "Couldn't find postal code."
-                        self.lastKnownSubLocality = firstPlacemark.subLocality ?? "Couldn't find sub-locality."
+                        self.stateController?.lastKnownLocation = firstPlacemark.name ?? "Could not find location."
                     }
                 }
             })
@@ -51,6 +43,6 @@ class LocationHandler: NSObject, CLLocationManagerDelegate, ObservableObject {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        lastKnownLocality = "Error Finding Locality."
+        self.stateController?.lastKnownLocation = "Could not find location."
     }
 }

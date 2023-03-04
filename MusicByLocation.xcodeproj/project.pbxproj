@@ -15,6 +15,9 @@
 		12E8E69F29B0EEB500828255 /* MusicByLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8E69E29B0EEB500828255 /* MusicByLocationUITests.swift */; };
 		12E8E6A129B0EEB500828255 /* MusicByLocationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8E6A029B0EEB500828255 /* MusicByLocationUITestsLaunchTests.swift */; };
 		12E8E6AE29B0EF4000828255 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8E6AD29B0EF4000828255 /* LocationHandler.swift */; };
+		12E8E6B029B32AD900828255 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8E6AF29B32AD800828255 /* StateController.swift */; };
+		12E8E6B329B32F8500828255 /* ArtistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8E6B229B32F8500828255 /* ArtistResponse.swift */; };
+		12E8E6B529B32FA800828255 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8E6B429B32FA800828255 /* Artist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		12E8E69E29B0EEB500828255 /* MusicByLocationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicByLocationUITests.swift; sourceTree = "<group>"; };
 		12E8E6A029B0EEB500828255 /* MusicByLocationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicByLocationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		12E8E6AD29B0EF4000828255 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
+		12E8E6AF29B32AD800828255 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
+		12E8E6B229B32F8500828255 /* ArtistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistResponse.swift; sourceTree = "<group>"; };
+		12E8E6B429B32FA800828255 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,11 +102,13 @@
 		12E8E68229B0EEB300828255 /* MusicByLocation */ = {
 			isa = PBXGroup;
 			children = (
+				12E8E6B129B32F6800828255 /* Model */,
 				12E8E68329B0EEB300828255 /* MusicByLocationApp.swift */,
 				12E8E68529B0EEB300828255 /* ContentView.swift */,
 				12E8E68729B0EEB400828255 /* Assets.xcassets */,
 				12E8E68929B0EEB400828255 /* Preview Content */,
 				12E8E6AD29B0EF4000828255 /* LocationHandler.swift */,
+				12E8E6AF29B32AD800828255 /* StateController.swift */,
 			);
 			path = MusicByLocation;
 			sourceTree = "<group>";
@@ -128,6 +136,15 @@
 				12E8E6A029B0EEB500828255 /* MusicByLocationUITestsLaunchTests.swift */,
 			);
 			path = MusicByLocationUITests;
+			sourceTree = "<group>";
+		};
+		12E8E6B129B32F6800828255 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12E8E6B229B32F8500828255 /* ArtistResponse.swift */,
+				12E8E6B429B32FA800828255 /* Artist.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12E8E6B529B32FA800828255 /* Artist.swift in Sources */,
 				12E8E6AE29B0EF4000828255 /* LocationHandler.swift in Sources */,
+				12E8E6B329B32F8500828255 /* ArtistResponse.swift in Sources */,
+				12E8E6B029B32AD900828255 /* StateController.swift in Sources */,
 				12E8E68629B0EEB300828255 /* ContentView.swift in Sources */,
 				12E8E68429B0EEB300828255 /* MusicByLocationApp.swift in Sources */,
 			);
