@@ -8,7 +8,11 @@
 import Foundation
 
 class StateController: ObservableObject {
-    @Published var lastKnownLocation: String = ""
+    var lastKnownLocation: String = "" {
+        didSet {
+            getArtists()
+        }
+    }
     @Published var artistNames: String = ""
     let locationHandler = LocationHandler()
     
@@ -22,7 +26,17 @@ class StateController: ObservableObject {
     }
     
     func getArtists() {
-        guard let url = URL(string: "https://itunes.apple.com/search?term=\(lastKnownLocation)&entity=musicArtist")
+        var lastKnownLocationURL = ""
+        let lastKnownLocationChars = Array(lastKnownLocation)
+        for i in 0..<lastKnownLocationChars.count {
+            if lastKnownLocationChars[i] == " " {
+                lastKnownLocationURL += "%20"
+            } else {
+                lastKnownLocationURL += String(lastKnownLocationChars[i])
+            }
+        }
+
+        guard let url = URL(string: "https://itunes.apple.com/search?term=\(lastKnownLocationURL)&entity=musicArtist&limit=5")
         else {
             print("Invalid URL")
             return
@@ -43,8 +57,6 @@ class StateController: ObservableObject {
                 }
             }
         }.resume()
-        
-        self.artistNames = "Lionel Ritchie, Ritchie, Lionel"
     }
     
     func parseJson(json: Data) -> ArtistResponse? {

@@ -10,7 +10,7 @@ import Foundation
 struct Artist: Codable {
     var name: String
     
-    private enum codingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case name = "artistName"
     }
 }
