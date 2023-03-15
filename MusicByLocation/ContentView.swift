@@ -13,7 +13,13 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text(state.artistNames)
+            
+            List(state.artistsByLocation, id: \.self) { artist in
+                HStack {
+                    Text(artist[0])
+                    Text(artist[1])
+                }
+            }
             
             Spacer()
         

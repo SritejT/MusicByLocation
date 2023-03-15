@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1289EC0129C0CD0900C94B81 /* ITunesAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1289EC0029C0CD0900C94B81 /* ITunesAdaptor.swift */; };
 		12E8E68429B0EEB300828255 /* MusicByLocationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8E68329B0EEB300828255 /* MusicByLocationApp.swift */; };
 		12E8E68629B0EEB300828255 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8E68529B0EEB300828255 /* ContentView.swift */; };
 		12E8E68829B0EEB400828255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12E8E68729B0EEB400828255 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1289EC0029C0CD0900C94B81 /* ITunesAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesAdaptor.swift; sourceTree = "<group>"; };
 		12E8E68029B0EEB300828255 /* MusicByLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicByLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E8E68329B0EEB300828255 /* MusicByLocationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicByLocationApp.swift; sourceTree = "<group>"; };
 		12E8E68529B0EEB300828255 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				12E8E68929B0EEB400828255 /* Preview Content */,
 				12E8E6AD29B0EF4000828255 /* LocationHandler.swift */,
 				12E8E6AF29B32AD800828255 /* StateController.swift */,
+				1289EC0029C0CD0900C94B81 /* ITunesAdaptor.swift */,
 			);
 			path = MusicByLocation;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12E8E6B529B32FA800828255 /* Artist.swift in Sources */,
+				1289EC0129C0CD0900C94B81 /* ITunesAdaptor.swift in Sources */,
 				12E8E6AE29B0EF4000828255 /* LocationHandler.swift in Sources */,
 				12E8E6B329B32F8500828255 /* ArtistResponse.swift in Sources */,
 				12E8E6B029B32AD900828255 /* StateController.swift in Sources */,
